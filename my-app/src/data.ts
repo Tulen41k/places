@@ -12,22 +12,6 @@ export interface Attraction {
 
 export const Splaces: Place[] = [
     {
-        city: 'Приморск',
-        distanceAndTime: '150 км, 2 часа',
-        attractions: [
-          {
-            name: 'Парк Приморский',
-            description: 'Красивый парк у моря, идеально подходит для прогулок.',
-            imageUrl: 'https://example.com/primorsky_park.jpg',
-          },
-          {
-            name: 'Музей Приморска',
-            description: 'Музей истории города и его окрестностей.',
-            imageUrl: 'https://example.com/primorsk_museum.jpg',
-          }
-        ]
-    },
-    {
       city: 'Высоцк',
       distanceAndTime: 'Примерно 160 км, 2.5 часа',
       attractions: [

@@ -1,24 +1,88 @@
-
-.App {
-  text-align: center;
+/* src/App.css */
+body {
+  background-color: #f5f5dc; /* Бежевый цвет фона */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #725306; /* Цвет заголовка на несколько тонов темнее */
   padding: 20px;
-  color: white;
-  font-size: 24px;
+  color: #ffffff;
+  text-align: center; /* Центрирование текста заголовка */
+}
+
+nav {
+  display: flex;
+  justify-content: center; /* Центрирование кнопок */
+  gap: 30px; /* Расстояние между кнопками */
+  margin-top: 20px;
 }
 
 button {
-  margin-top: 20px;
+  background-color: #d2b48c; /* Тот же цвет, что и заголовок */
+  color: #ffffff;
+  border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  margin: 10px;
   cursor: pointer;
 }
 
-p {
+button:hover {
+  background-color: #725306; /* Темный золотистый цвет при наведении */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-button {
+  position: absolute;
+  left: 20px;
+  top:55px;
+}
+
+.city-name {
+  text-align: center;
+  font-size: 2em;
   margin-top: 20px;
-  font-size: 18px;
-  color: #333;
+}
+
+.city-info {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.attractions-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.attractions-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.attraction-card {
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid #d2b48c;
+  border-radius: 10px;
+}
+
+.attraction-card img {
+  width: 100%;
+  height: auto;
+  max-width: 200px; /* Устанавливаем фиксированную ширину для всех изображений */
+  margin-top: 10px;
 }

@@ -18,24 +18,26 @@ const LongTrips: React.FC = () => {
       <header className="App-header">
         Долгие поездки
       </header>
-      <button onClick={generateCity}>Сгенерировать город</button>
-      {selectedPlace && (
-        <div>
-          <h2>{selectedPlace.city}</h2>
-          <p>{selectedPlace.distanceAndTime}</p>
-          <h3>Достопримечательности:</h3>
-          <ul>
-            {selectedPlace.attractions.map((attraction, index) => (
-              <li key={index}>
-                <h4>{attraction.name}</h4>
-                <p>{attraction.description}</p>
-                <img src={attraction.imageUrl} alt={attraction.name} width="200" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-      <button onClick={() => navigate('/')}>Назад</button>
+      <div className="main-content">
+        <button onClick={generateCity}>Сгенерировать город</button>
+        {selectedPlace && (
+          <div>
+            <h2 className="city-name">{selectedPlace.city}</h2>
+            <p className="city-info">{selectedPlace.distanceAndTime}</p>
+            <h3 className="attractions-title">Достопримечательности</h3>
+            <div className="attractions-container">
+              {selectedPlace.attractions.map((attraction, index) => (
+                <div className="attraction-card" key={index}>
+                  <h4>{attraction.name}</h4>
+                  <p>{attraction.description}</p>
+                  <img src={attraction.imageUrl} alt={attraction.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+      <button className="back-button" onClick={() => navigate('/')}>Назад</button>
     </div>
   );
 }

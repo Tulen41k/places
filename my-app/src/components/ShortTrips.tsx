@@ -15,28 +15,30 @@ const ShortTrips: React.FC = () => {
 
   return (
     <div>
-      <header className="App-header">
-        Близкие поездки
-      </header>
+    <header className="App-header">
+      Близкие поездки
+    </header>
+    <div className="main-content">
       <button onClick={generateCity}>Сгенерировать город</button>
       {selectedPlace && (
         <div>
-          <h2>{selectedPlace.city}</h2>
-          <p>{selectedPlace.distanceAndTime}</p>
-          <h3>Достопримечательности:</h3>
-          <ul>
+          <h2 className="city-name">{selectedPlace.city}</h2>
+          <p className="city-info">{selectedPlace.distanceAndTime}</p>
+          <h3 className="attractions-title">Достопримечательности</h3>
+          <div className="attractions-container">
             {selectedPlace.attractions.map((attraction, index) => (
-              <li key={index}>
+              <div className="attraction-card" key={index}>
                 <h4>{attraction.name}</h4>
                 <p>{attraction.description}</p>
-                <img src={attraction.imageUrl} alt={attraction.name} width="200" />
-              </li>
+                <img src={attraction.imageUrl} alt={attraction.name} />
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       )}
-      <button onClick={() => navigate('/')}>Назад</button>
     </div>
+    <button className="back-button" onClick={() => navigate('/')}>Назад</button>
+  </div>
   );
 }
 
