@@ -1,25 +1,41 @@
-import React, { useState } from 'react';
+// src/App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import ShortTrips from './components/ShortTrips';
+import LongTrips from './components/LongTrips';
 import './App.css';
-import { places } from './data';
 
 const App: React.FC = () => {
-
-  const [city, setCity] = useState<string | null>(null);
-
-  const generateCity = () => {
-    const randomCity = places[Math.floor(Math.random() * places.length)];
-    setCity(randomCity);
-  };
-
   return (
+    <Router>
     <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/short-trips" element={<ShortTrips />} />
+        <Route path="/long-trips" element={<LongTrips />} />
+      </Routes>
+    </div>
+  </Router>
+  );
+}
+
+const Home: React.FC = () => {
+  return (
+    <div>
       <header className="App-header">
-          Places
+        Выбор места
       </header>
-      <button onClick={generateCity}>Сгенерировать город</button>
-      {city && <p>Город: {city}</p>}
+      <nav>
+        <Link to="/short-trips">
+          <button>Близкие поездки</button>
+        </Link>
+        <Link to="/long-trips">
+          <button>Долгие поездки</button>
+        </Link>
+      </nav>
     </div>
   );
 }
 
 export default App;
+
